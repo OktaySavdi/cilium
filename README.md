@@ -23,7 +23,7 @@ source <(helm completion bash)
 ```
 ### Certificate for clustermesh
 ```bash
-mkdr certDir/;cd certDir/
+mkdir certDir/;cd certDir/
 
 chmod +x kind-cilium-clustermesh.sh
 ./kind-cilium-clustermesh.sh
