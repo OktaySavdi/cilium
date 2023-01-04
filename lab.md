@@ -4,12 +4,14 @@ In this lab, we will create two Kind clusters and mesh them using Cilium.
 We'll have two requirements for these clusters:
 
 1-disable default CNI so we can easily install Cilium
+
 2-use disjoint pods and services subnets
 
 ### Koornacht Cluster
 Let's have a look at the configuration for the first cluster, which we will be calling Koornacht:
 
-cat kind_koornacht.yaml
+**cat kind_koornacht.yaml**
+```yaml
 ---
 apiVersion: kind.x-k8s.io/v1alpha4
 kind: Cluster
@@ -31,6 +33,7 @@ nodes:
     hostPort: 31235
 - role: worker
 - role: worker
+```
 
 This cluster will feature one control-plane node and 2 worker nodes, and use 10.1.0.0/16 for the Pod network, and 172.20.1.0/24 for the Services.
 
